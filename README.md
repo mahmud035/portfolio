@@ -72,5 +72,5 @@ the social share image (`og-image.png`, 1200×630).
 
 It's a plain static build — `npm run build` outputs `dist/`, host it anywhere.
 I deploy on Vercel (framework preset Vite, output `dist/`). Before pointing a
-real domain at it, replace the `https://YOUR_DOMAIN` placeholders in
+real domain at it, replace the `https://mahamudulhasan.vercel.app/` placeholders in
 `index.html` (canonical + Open Graph/Twitter URLs).
