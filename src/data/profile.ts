@@ -12,6 +12,8 @@ export interface Profile {
   headlineParts: string[];
   /** One-line positioning statement. */
   tagline: string;
+  /** Compact hero "proof" chips — concrete evidence shown above the fold. */
+  proofPoints: string[];
   location: string;
   email: string;
   /** Human-readable phone number for display. */
@@ -46,7 +48,14 @@ export const profile: Profile = {
     'React · TypeScript · Node · MongoDB',
     'AI-native',
   ],
-  tagline: 'AI-native full-stack developer who ships production software.',
+  tagline:
+    'I build and ship production MERN apps — from live commerce to AI and real-time systems.',
+  proofPoints: [
+    'Live UK e-commerce',
+    'Docker + CI/CD',
+    '90+ REST endpoints',
+    '$0-infra AI app',
+  ],
   location: 'Gopalganj, Dhaka, Bangladesh',
   email: 'mahamudulhasan4148@gmail.com',
   phoneDisplay: '+88 01986-870460',
@@ -61,7 +70,7 @@ export const profile: Profile = {
   cvUrl:
     'https://drive.google.com/file/d/1XUTioVsxcvO6owju9ZU1BeOAOqpSm4kj/view?usp=sharing',
   about: [
-    'Full-stack MERN developer with 3+ years building and shipping production-grade, type-safe web applications — working independently and with small teams. Deep frontend work in React 19 and TypeScript over feature-driven Express/MongoDB APIs, with real payment integrations, AI features, and Docker/CI deployment.',
+    'Full-stack MERN developer with 3+ years building and shipping production-grade, type-safe web applications — working independently and with small teams. End-to-end work across React 19 / TypeScript frontends and feature-driven Express / MongoDB APIs, with real payment integrations, AI features, and Docker/CI deployment.',
   ],
   currentlyBuilding:
     'Currently building two flagship products: an AI support/knowledge SaaS (RAG over MongoDB Atlas Vector Search + Gemini) and a real-time live-auction platform (Socket.io + Redis).',

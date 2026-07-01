@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { Fragment } from 'react';
 import { profile } from '../../data/profile';
 import { Avatar } from '../ui/Avatar';
+import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
 import { IconLink } from '../ui/IconLink';
 import { GithubIcon, LinkedinIcon } from '../ui/icons';
@@ -72,6 +73,21 @@ export function Hero() {
               icon={LinkedinIcon}
             />
           </div>
+
+          {/* Proof chips: concrete evidence a recruiter sees above the fold. */}
+          <ul role="list" className="mt-8 flex flex-wrap gap-2">
+            {profile.proofPoints.map((point) => (
+              <li key={point}>
+                <Badge>
+                  <span
+                    aria-hidden="true"
+                    className="bg-accent mr-2 size-1.5 rounded-full"
+                  />
+                  {point}
+                </Badge>
+              </li>
+            ))}
+          </ul>
         </Reveal>
 
         <Reveal

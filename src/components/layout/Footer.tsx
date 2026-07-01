@@ -23,8 +23,9 @@ export function Footer() {
               Reach me
             </h2>
             <p className="text-muted mt-3">
-              Open to full-stack roles and freelance work. The fastest way to
-              reach me is email or LinkedIn.
+              Open to full-stack roles and freelance work — remote-friendly
+              (GMT+6), comfortable working async with international clients.
+              Fastest way to reach me is email or LinkedIn.
             </p>
             <p className="text-subtle mt-4 inline-flex items-center gap-2 text-sm">
               <MapPin className="size-4" aria-hidden="true" />

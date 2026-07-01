@@ -74,7 +74,7 @@ export const projects: Project[] = [
       'Zod',
     ],
     bullets: [
-      'Built a department research portal to explore faculty, publications, and collaboration networks, with debounced keyword search and highlighted matches across staff and papers.',
+      'Built for the Aston University CS department — a research portal to explore faculty, publications, and collaboration networks, with debounced keyword search and highlighted matches across staff and papers.',
       'Implemented an interactive force-directed collaboration graph (weighted co-authorship edges, department clustering, PNG export) over a computed author-pair aggregation.',
       'Followed a strict feature-driven architecture mirroring frontend features 1:1 to backend modules, with Zod request validation and a consistent response envelope.',
     ],
