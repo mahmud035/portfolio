@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0B1120" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Md. Mahamudul Hasan Pavel — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="AI-native full-stack MERN developer with 3+ years building production-grade, type-safe web applications in React, TypeScript, Node, and MongoDB."
+    />
+    <meta name="author" content="Md. Mahamudul Hasan Pavel" />
+
+    <!-- TODO: replace https://YOUR_DOMAIN once the custom domain is live. -->
+    <link rel="canonical" href="https://YOUR_DOMAIN/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Md. Mahamudul Hasan Pavel" />
+    <meta
+      property="og:title"
+      content="Md. Mahamudul Hasan Pavel — Full-Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="AI-native full-stack MERN developer with 3+ years building production-grade, type-safe web applications in React, TypeScript, Node, and MongoDB."
+    />
+    <meta property="og:url" content="https://YOUR_DOMAIN/" />
+    <meta property="og:image" content="https://YOUR_DOMAIN/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Md. Mahamudul Hasan Pavel — Full-Stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="AI-native full-stack MERN developer with 3+ years building production-grade, type-safe web applications in React, TypeScript, Node, and MongoDB."
+    />
+    <meta name="twitter:image" content="https://YOUR_DOMAIN/og-image.png" />
+
+    <!--
+      No-flash theme init: runs before React hydrates so the correct theme
+      class is on <html> for the very first paint. Mirrors ThemeProvider logic.
+    -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          // Default dark: only fall back to light when the OS *explicitly*
+          // prefers light. No stored value + no OS preference => dark.
+          var prefersLight = window.matchMedia(
+            '(prefers-color-scheme: light)',
+          ).matches;
+          var isDark = stored ? stored === 'dark' : !prefersLight;
+          document.documentElement.classList.toggle('dark', isDark);
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
