@@ -54,7 +54,7 @@ export const skills: Skills = {
     },
     {
       category: 'AI & Payments',
-      items: ['Google Gemini', 'Stripe', 'Mollie', 'Cloudinary'],
+      items: ['Google Gemini', 'Mollie', 'Cloudinary'],
     },
     {
       category: 'Testing',
@@ -62,6 +62,7 @@ export const skills: Skills = {
     },
   ],
   secondary: [
+    'Stripe',
     'GraphQL',
     'Redux Toolkit',
     'Zustand',
