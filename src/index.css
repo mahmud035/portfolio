@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+
+/* Self-hosted variable fonts (no external requests, no CDN flash). */
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/sora';
+
+/* Class-based dark mode: `.dark` on <html> toggles the variant. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  Semantic color tokens. Light values live on :root, dark overrides on .dark.
+  `@theme inline` maps them to Tailwind utilities (bg-bg, text-fg, border-border,
+  text-accent, ...) so every color in JSX flips with the theme automatically.
+  Neutrals sit on a slate scale; accent is deep blue (#1D4ED8), used sparingly.
+*/
+:root {
+  --bg: #ffffff;
+  --surface: #f8fafc; /* slate-50  */
+  --surface-2: #f1f5f9; /* slate-100 */
+  --fg: #0f172a; /* slate-900 */
+  --muted: #475569; /* slate-600 */
+  --subtle: #64748b; /* slate-500 */
+  --border: #e2e8f0; /* slate-200 */
+  --accent: #1d4ed8; /* blue-700  */
+  --accent-fg: #ffffff;
+  --accent-soft: #eff6ff; /* blue-50   */
+  --ring: #2563eb; /* blue-600  */
+}
+
+.dark {
+  --bg: #0b1120; /* near slate-950 */
+  --surface: #0f172a; /* slate-900 */
+  --surface-2: #1e293b; /* slate-800 */
+  --fg: #f1f5f9; /* slate-100 */
+  --muted: #94a3b8; /* slate-400 */
+  --subtle: #64748b; /* slate-500 */
+  --border: #1e293b; /* slate-800 */
+  --accent: #3b82f6; /* blue-500 — lifts on dark bg */
+  --accent-fg: #0b1120;
+  --accent-soft: #172554; /* blue-950 */
+  --ring: #60a5fa; /* blue-400  */
+}
+
+@theme inline {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Sora Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-ring: var(--ring);
+
+  /* LinkedIn brand blue — constant across themes, for the headline glyph. */
+  --color-linkedin: #0a66c2;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  /* Visible, consistent focus ring for keyboard users. */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  /* Respect users who ask for less motion. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
