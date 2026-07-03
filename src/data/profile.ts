@@ -44,17 +44,18 @@ export const profile: Profile = {
   brandName: 'Mahmud',
   headlineParts: [
     'Full-Stack Developer',
-    '3+ years',
+    '2+ years',
     'React · TypeScript · Node · MongoDB',
     'AI-native',
   ],
   tagline:
-    'I build and ship production MERN apps — from live commerce to AI and real-time systems.',
+    'I build, ship, and operate live production systems across commerce and AI — now building real-time.',
   proofPoints: [
     'Live UK e-commerce',
-    'Docker + CI/CD',
-    '90+ REST endpoints',
     '$0-infra AI app',
+    'Docker + CI/CD',
+    'Zero-downtime migration',
+    'Solo-built & operated', // ← or 'Lighthouse 100 · A11y/SEO'
   ],
   location: 'Gopalganj, Dhaka, Bangladesh',
   email: 'mahamudulhasan4148@gmail.com',
@@ -70,7 +71,7 @@ export const profile: Profile = {
   cvUrl:
     'https://drive.google.com/file/d/1XUTioVsxcvO6owju9ZU1BeOAOqpSm4kj/view?usp=sharing',
   about: [
-    'Full-stack MERN developer with 3+ years building and shipping production-grade, type-safe web applications — working independently and with small teams. End-to-end work across React 19 / TypeScript frontends and feature-driven Express / MongoDB APIs, with real payment integrations, AI features, and Docker/CI deployment.',
+    'Full-stack developer with 2+ years building and shipping production-grade, type-safe web applications — working independently and with small teams. End-to-end work across React 19 / TypeScript frontends and feature-driven Express / MongoDB APIs, with real payment integrations, AI features, and Docker/CI deployment.',
   ],
   currentlyBuilding:
     'Currently building two flagship products: an AI support/knowledge SaaS (RAG over MongoDB Atlas Vector Search + Gemini) and a real-time live-auction platform (Socket.io + Redis).',

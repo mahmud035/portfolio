@@ -1,4 +1,4 @@
-export type ProjectLinkType = 'live' | 'code';
+export type ProjectLinkType = 'live' | 'code' | 'Case Study';
 
 export interface ProjectLink {
   type: ProjectLinkType;
@@ -21,22 +21,26 @@ export const projects: Project[] = [
     tech: [
       'React 19',
       'TypeScript',
-      'Tailwind v4',
-      'Zod',
+      'Node',
+      'Express 5',
+      'MongoDB',
       'TanStack Query v5',
-      'Node/Express',
-      'Mollie',
-      'Mongoose',
+      'Tailwind v4',
+      'Square',
       'Vercel',
       'Railway',
     ],
     bullets: [
-      'Built and shipped the customer storefront for a live UK e-commerce platform — ~35,000 lines of TypeScript across 25 lazy-loaded pages and 12 feature modules, consuming 90+ REST endpoints.',
-      'Engineered a dual cart system: a localStorage guest cart that merges seamlessly into a server-validated authenticated cart on login, with real-time stock checks.',
-      'Integrated Mollie payments end-to-end (hosted checkout, webhook reconciliation, payment retry) behind a provider-agnostic payment layer, plus UK postcode address lookup and order tracking.',
-      'Secured auth with JWT in HTTP-only cookies and a silent Axios refresh interceptor that queues and retries failed requests; tuned load via route-level code splitting, vendor chunking, and Cloudinary image optimization.',
+      `Architected a provider-agnostic payment layer that absorbed two processor migrations (Stripe → Mollie → Square) with zero schema changes, containing a forced shutdown to a 4-day driver swap — storefront never down.`,
+      `Built and operate the entire three-service platform solo — an Express / MongoDB API plus a React storefront and admin dashboard — with subdomain-scoped HTTP-only-cookie auth, guest checkout, and real production orders.`,
+      `Engineered idempotent payment processing with retrying MongoDB transactions, an in-transaction PAID re-check, and a send-then-mark email pattern to prevent duplicate charges and confirmation emails under webhook replay.`,
+      `Enforced a feature-driven architecture across all three codebases with frontend types mirroring API responses, so any contract change breaks at TypeScript compile time rather than in production.`,
+      `Achieved Lighthouse Accessibility 100, SEO 100, and Best Practices 100 across storefront routes, with desktop Core Web Vitals in Google’s “Good” range (LCP 1.94s, INP 88ms, CLS 0.04).`,
     ],
-    links: [{ type: 'live', href: 'https://halalaura.co.uk' }],
+    links: [
+      { type: 'live', href: 'https://halalaura.co.uk' },
+      { type: 'Case Study', href: 'https://github.com/mahmud035/halal-aura' },
+    ],
   },
   {
     name: 'রাঁধুনি (Recipe-Note)',
@@ -52,10 +56,10 @@ export const projects: Project[] = [
       'GitHub Actions',
     ],
     bullets: [
-      'Shipped a full-stack app that turns Bengali YouTube cooking videos into editable, structured recipes via Google Gemini — built for a real non-technical user, run end-to-end on a $0 hosting/inference budget.',
-      'Designed an asynchronous job pipeline (fire-and-forget + client polling) with wall-clock timeouts, race guards, and orphaned-job recovery so a hung AI call can never crash the server.',
-      'Anchored the system on a single Zod schema serving four consumers (AI response, Mongoose model, API envelope, client type) — backend changes break the frontend at compile time, not runtime.',
-      'Owned deployment: multi-stage Docker image, GitHub Actions → GHCR → self-hosted box behind a Cloudflare Tunnel, with per-IP rate limiting and a Mongo-persisted daily budget guard.',
+      `Shipped a full-stack AI app end-to-end — React + Express / MongoDB API — that turns Bengali YouTube cooking videos into editable, structured recipes via Google Gemini, for a real non-technical user on a $0 inference budget.`,
+      `Designed a fault-tolerant asynchronous job pipeline (fire-and-forget + client polling) with wall-clock timeouts, status-gated race guards, and startup orphan-recovery, so a hung or rate-limited AI call can never crash the server.`,
+      `Anchored the system on a single Zod schema serving four consumers (AI response, Mongoose model, API envelope, and client type), so backend changes break the frontend at compile time, not runtime.`,
+      `Owned split-origin deployment: multi-stage Docker image → GitHub Actions → GHCR → self-hosted box behind a Cloudflare Tunnel, with auto-deploying CI/CD, an atomic daily-budget guard, and per-IP rate limiting.`,
     ],
     links: [
       { type: 'live', href: 'https://recipe-note-app.vercel.app' },
@@ -66,17 +70,17 @@ export const projects: Project[] = [
     name: 'Aston CS Research Portal',
     subtitle: 'Research Discovery Platform',
     tech: [
-      'React',
+      'React 19',
       'TypeScript',
-      'Node/Express',
+      'Express 5',
       'MongoDB',
-      'TanStack Query',
+      'TanStack Query v5',
       'Zod',
     ],
     bullets: [
-      'Built for the Aston University CS department — a research portal to explore faculty, publications, and collaboration networks, with debounced keyword search and highlighted matches across staff and papers.',
-      'Implemented an interactive force-directed collaboration graph (weighted co-authorship edges, department clustering, PNG export) over a computed author-pair aggregation.',
-      'Followed a strict feature-driven architecture mirroring frontend features 1:1 to backend modules, with Zod request validation and a consistent response envelope.',
+      `Modeled co-authorship as an interactive force-directed collaboration graph over a computed aggregation — deduping mirror author-pairs by a sorted canonical key and weighting each edge by shared-publication count.`,
+      `Structured a feature-driven full-stack architecture mirroring frontend features 1:1 to backend modules with a shared typed API contract, so any response-shape change breaks TypeScript at compile time, not runtime.`,
+      `Wired debounced keyword search spanning faculty and publications in a single round-trip, with case-insensitive backend matching, Zod-validated params, and highlighted matches showing why each result surfaced.`,
     ],
     links: [
       { type: 'live', href: 'https://aston-cs-research-portal.vercel.app/' },

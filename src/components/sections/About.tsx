@@ -1,7 +1,7 @@
 import { GraduationCap } from 'lucide-react';
 import { profile } from '../../data/profile';
-import { SectionHeading } from '../ui/SectionHeading';
 import { Reveal } from '../ui/Reveal';
+import { SectionHeading } from '../ui/SectionHeading';
 
 /** Honest freelance framing plus a subtle "currently building" callout. */
 export function About() {
@@ -9,10 +9,7 @@ export function About() {
     <section id="about" className="border-border border-t">
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
         <Reveal>
-          <SectionHeading
-            eyebrow="About"
-            title="Full-stack MERN, end to end."
-          />
+          <SectionHeading eyebrow="About" title="Full-stack, end to end." />
         </Reveal>
 
         <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-12">

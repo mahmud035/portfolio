@@ -1,11 +1,11 @@
-import { Fragment } from 'react';
 import { ExternalLink } from 'lucide-react';
-import { projects } from '../../data/projects';
+import { Fragment } from 'react';
 import type { Project, ProjectLinkType } from '../../data/projects';
+import { projects } from '../../data/projects';
 import { Button } from '../ui/Button';
 import { Card } from '../ui/Card';
-import { SectionHeading } from '../ui/SectionHeading';
 import { Reveal } from '../ui/Reveal';
+import { SectionHeading } from '../ui/SectionHeading';
 import { GithubIcon, type IconType } from '../ui/icons';
 
 const LINK_META: Record<
@@ -14,6 +14,7 @@ const LINK_META: Record<
 > = {
   live: { label: 'Live', icon: ExternalLink, variant: 'primary' },
   code: { label: 'Code', icon: GithubIcon, variant: 'secondary' },
+  'Case Study': { label: 'Case Study', icon: GithubIcon, variant: 'secondary' },
 };
 
 function ProjectCard({ project }: { project: Project }) {
@@ -90,7 +91,7 @@ export function Projects() {
           />
         </Reveal>
 
-        <div className="mt-10 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid items-stretch gap-6 md:grid-cols-2">
           {projects.map((project, index) => (
             <Reveal key={project.name} delay={index * 0.08} className="h-full">
               <ProjectCard project={project} />
