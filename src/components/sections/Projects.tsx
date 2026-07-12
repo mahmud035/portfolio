@@ -15,6 +15,7 @@ const LINK_META: Record<
   live: { label: 'Live', icon: ExternalLink, variant: 'primary' },
   code: { label: 'Code', icon: GithubIcon, variant: 'secondary' },
   'Case Study': { label: 'Case Study', icon: GithubIcon, variant: 'secondary' },
+  Docs: { label: 'Docs', icon: GithubIcon, variant: 'secondary' },
 };
 
 function ProjectCard({ project }: { project: Project }) {

@@ -1,4 +1,4 @@
-export type ProjectLinkType = 'live' | 'code' | 'Case Study';
+export type ProjectLinkType = 'live' | 'code' | 'Case Study' | 'Docs';
 
 export interface ProjectLink {
   type: ProjectLinkType;
@@ -64,6 +64,7 @@ export const projects: Project[] = [
     links: [
       { type: 'live', href: 'https://recipe-note-app.vercel.app' },
       { type: 'code', href: 'https://github.com/mahmud035/recipe-note' },
+      { type: 'Docs', href: 'https://github.com/mahmud035/devops-lab' },
     ],
   },
   {
