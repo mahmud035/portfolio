@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Menu, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { profile } from '../../data/profile';
 import { cn } from '../../utils/cn';
@@ -14,6 +14,10 @@ const NAV_LINKS = [
 /** Sticky top navigation: brand, anchor links, theme toggle, CV link. */
 export function Navbar() {
   const [activeId, setActiveId] = useState('');
+  // Mobile disclosure menu open state (UI behaviour only).
+  const [isOpen, setIsOpen] = useState(false);
+  // Bounds the "click outside" test — anything outside the header dismisses.
+  const headerRef = useRef<HTMLElement>(null);
   // While a click-driven smooth scroll is in flight, the observer must not
   // change the active link (it would flash through intermediate sections).
   const isProgrammaticScroll = useRef(false);
@@ -52,6 +56,26 @@ export function Navbar() {
   // Clear any pending scroll lock on unmount (no dangling listeners/timers).
   useEffect(() => () => releaseScrollLock.current?.(), []);
 
+  // While the mobile menu is open, Esc or a pointer outside the header closes
+  // it. Listeners exist only while open; no focus trap, no body scroll lock.
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpen(false);
+    };
+    const onPointerDown = (event: PointerEvent) => {
+      if (!headerRef.current?.contains(event.target as Node)) setIsOpen(false);
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('pointerdown', onPointerDown);
+    };
+  }, [isOpen]);
+
   const handleNavClick = (targetId: string) => {
     // Cancel any in-flight lock first so rapid clicks don't stack timers.
     releaseScrollLock.current?.();
@@ -76,7 +100,10 @@ export function Navbar() {
   };
 
   return (
-    <header className="border-border bg-bg/80 sticky top-0 z-40 border-b backdrop-blur-md">
+    <header
+      ref={headerRef}
+      className="border-border bg-bg/80 sticky top-0 z-40 border-b backdrop-blur-md"
+    >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a
           href="#top"
@@ -110,6 +137,20 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            className="border-border bg-surface text-fg hover:bg-surface-2 inline-flex size-9 items-center justify-center rounded-lg border transition-colors md:hidden"
+          >
+            {isOpen ? (
+              <X className="size-4.5" aria-hidden="true" />
+            ) : (
+              <Menu className="size-4.5" aria-hidden="true" />
+            )}
+          </button>
           <ThemeToggle />
           <Button
             href={profile.cvUrl}
@@ -123,6 +164,36 @@ export function Navbar() {
           </Button>
         </div>
       </nav>
+
+      {isOpen ? (
+        <div id="mobile-nav" className="border-border border-t md:hidden">
+          <ul className="mx-auto flex max-w-6xl flex-col px-6 py-2">
+            {NAV_LINKS.map((link) => {
+              const sectionId = link.href.slice(1);
+              const isActive = activeId === sectionId;
+              return (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={() => {
+                      // Reuse the desktop scroll/scrollspy handler, then dismiss.
+                      handleNavClick(sectionId);
+                      setIsOpen(false);
+                    }}
+                    aria-current={isActive ? 'true' : undefined}
+                    className={cn(
+                      'block py-2 text-sm font-medium transition-colors',
+                      isActive ? 'text-accent' : 'text-muted hover:text-fg',
+                    )}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ) : null}
     </header>
   );
 }
