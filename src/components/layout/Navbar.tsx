@@ -137,6 +137,17 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Button
+            href={profile.cvUrl}
+            external
+            variant="secondary"
+            size="sm"
+            aria-label="Open Resume in a new tab"
+          >
+            <ExternalLink className="size-4" aria-hidden="true" />
+            <span>Resume</span>
+          </Button>
           <button
             type="button"
             onClick={() => setIsOpen((open) => !open)}
@@ -151,17 +162,6 @@ export function Navbar() {
               <Menu className="size-4.5" aria-hidden="true" />
             )}
           </button>
-          <ThemeToggle />
-          <Button
-            href={profile.cvUrl}
-            external
-            variant="secondary"
-            size="sm"
-            aria-label="Open Resume in a new tab"
-          >
-            <ExternalLink className="size-4" aria-hidden="true" />
-            <span>Resume</span>
-          </Button>
         </div>
       </nav>
 
