@@ -27,9 +27,6 @@ export interface Profile {
   headshotAlt: string;
   /** Initials shown when the headshot is unavailable. */
   initials: string;
-  /** Public path to the downloadable CV. */
-  cvSrc: string;
-  cvFileName: string;
   /** Hosted résumé link (Google Drive) — opened in a new tab. */
   cvUrl: string;
   /** About-section paragraph(s). */
@@ -66,8 +63,6 @@ export const profile: Profile = {
   headshotSrc: '/mahmud.png',
   headshotAlt: 'Md. Mahamudul Hasan Pavel',
   initials: 'MH',
-  cvSrc: '/Md-Mahamudul-Hasan-Resume.pdf',
-  cvFileName: 'Md-Mahamudul-Hasan-Resume.pdf',
   cvUrl:
     'https://drive.google.com/file/d/1XUTioVsxcvO6owju9ZU1BeOAOqpSm4kj/view?usp=sharing',
   about: [
