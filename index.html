@@ -22,6 +22,17 @@
     <!-- TODO: Interim: https://mahamudulhasan.vercel.app — swap all absolute URLs to the custom domain once purchased. -->
     <link rel="canonical" href="https://mahamudulhasan.vercel.app/" />
 
+    <!-- Preload the LCP headshot so it starts downloading before the JS bundle runs. Keep in sync with Hero/profile. -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/mahmud-640.webp"
+      imagesrcset="/mahmud-320.webp 320w, /mahmud-480.webp 480w, /mahmud-640.webp 640w"
+      imagesizes="(min-width: 768px) 320px, (min-width: 640px) 288px, 224px"
+      fetchpriority="high"
+    />
+
     <!-- Structured data: ties this site to the same person across profiles -->
     <script type="application/ld+json">
       {

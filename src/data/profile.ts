@@ -24,6 +24,8 @@ export interface Profile {
   linkedinUrl: string;
   /** Public path to the headshot; Hero falls back to initials if missing. */
   headshotSrc: string;
+  /** Resized WebP variants of the headshot for `srcset`. */
+  headshotSrcSet: string;
   headshotAlt: string;
   /** Initials shown when the headshot is unavailable. */
   initials: string;
@@ -60,7 +62,9 @@ export const profile: Profile = {
   phoneHref: 'tel:+8801986870460',
   githubUrl: 'https://github.com/mahmud035',
   linkedinUrl: 'https://www.linkedin.com/in/mahmud035/',
-  headshotSrc: '/mahmud.png',
+  headshotSrc: '/mahmud-640.webp',
+  headshotSrcSet:
+    '/mahmud-320.webp 320w, /mahmud-480.webp 480w, /mahmud-640.webp 640w',
   headshotAlt: 'Md. Mahamudul Hasan Pavel',
   initials: 'MH',
   cvUrl:

@@ -33,7 +33,7 @@
   --surface-2: #1e293b; /* slate-800 */
   --fg: #f1f5f9; /* slate-100 */
   --muted: #94a3b8; /* slate-400 */
-  --subtle: #64748b; /* slate-500 */
+  --subtle: #94a3b8; /* slate-400 — slate-500 fails 4.5:1 on dark surfaces */
   --border: #1e293b; /* slate-800 */
   --accent: #3b82f6; /* blue-500 — lifts on dark bg */
   --accent-fg: #0b1120;

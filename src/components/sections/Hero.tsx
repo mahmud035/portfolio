@@ -96,6 +96,11 @@ export function Hero() {
         >
           <Avatar
             src={profile.headshotSrc}
+            srcSet={profile.headshotSrcSet}
+            sizes="(min-width: 768px) 320px, (min-width: 640px) 288px, 224px"
+            width={640}
+            height={861}
+            fetchPriority="high"
             alt={profile.headshotAlt}
             initials={profile.initials}
             className="border-border aspect-4/5 w-56 rounded-3xl border object-top shadow-sm sm:w-72 md:w-80"
