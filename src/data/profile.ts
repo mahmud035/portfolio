@@ -64,7 +64,7 @@ export const profile: Profile = {
   githubUrl: 'https://github.com/mahmud035',
   linkedinUrl: 'https://www.linkedin.com/in/mahmud035/',
   headshotSrc: '/mahmud.png',
-  headshotAlt: 'Md. Mahamudul Hasan',
+  headshotAlt: 'Md. Mahamudul Hasan Pavel',
   initials: 'MH',
   cvSrc: '/Md-Mahamudul-Hasan-Resume.pdf',
   cvFileName: 'Md-Mahamudul-Hasan-Resume.pdf',
