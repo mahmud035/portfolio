@@ -25,3 +25,6 @@ dist-ssr
 
 # Others
 DEPLOYMENT.md
+
+# .env holds public VITE_* values only (shipped in the bundle). Never put secrets here.
+!.env

@@ -71,6 +71,5 @@ the social share image (`og-image.png`, 1200×630).
 ## Deploying
 
 It's a plain static build — `npm run build` outputs `dist/`, host it anywhere.
-I deploy on Vercel (framework preset Vite, output `dist/`). Before pointing a
-real domain at it, replace the `https://mahamudulhasan.vercel.app/` placeholders in
-`index.html` (canonical + Open Graph/Twitter URLs).
+I deploy on Vercel (framework preset Vite, output `dist/`). The canonical origin
+lives in three places: `VITE_SITE_URL` in `.env`, `public/robots.txt`, and `public/sitemap.xml`.
