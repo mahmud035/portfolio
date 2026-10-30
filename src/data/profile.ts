@@ -57,7 +57,7 @@ export const profile: Profile = {
     'Solo-built & operated', // ← or 'Lighthouse 100 · A11y/SEO'
   ],
   location: 'Gopalganj, Dhaka, Bangladesh',
-  email: 'mahamudulhasan4148@gmail.com',
+  email: 'mahmud@mahamudulhasan.dev',
   phoneDisplay: '+88 01986-870460',
   phoneHref: 'tel:+8801986870460',
   githubUrl: 'https://github.com/mahmud035',
